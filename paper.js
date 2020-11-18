@@ -9,6 +9,7 @@ class Paper{
 		this.body=Bodies.circle(x,y,radius,options)
 		this.width=radius*2;
 		this.height=radius*2;
+		this.image=loadImage("paper.png")
 		World.add(world,this.body)
 	}
 	display(){
@@ -16,8 +17,9 @@ class Paper{
 		push()
 		fill("pink")
 		translate(pos.x,pos.y)
-		ellipseMode(RADIUS)
-		ellipse(0,0,this.width,this.height);
+		imageMode(CENTER)
+		//ellipse(0,0,this.width,this.height);
+		image(this.image,0,0,this.width+30,this.height+30)
 		pop()
 	}
 }

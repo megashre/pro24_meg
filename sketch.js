@@ -18,9 +18,10 @@ function setup() {
 
 	//Create the Bodies Here.
 
-paper1=new Paper(50,643,8,8)
+
 ground=new Ground(400,670,800,20)
 dustbin=new Dustbin(580,650)
+paper1=new Paper(50,660,40)
 	Engine.run(engine);
   
 }
@@ -28,10 +29,11 @@ dustbin=new Dustbin(580,650)
 
 function draw() {
   rectMode(CENTER);
-  background(0);
-  paper1.display();
+  background(255);
+  
   ground.display();
  dustbin.display();
+ paper1.display();
   drawSprites();
 // keyPressed()
 }
@@ -40,7 +42,7 @@ function draw() {
 function keyPressed() {
   if (keyCode === UP_ARROW) {
 
-    Matter.Body.applyForce(paper1.body,paper1.body.position,{x:5,y:-5});
+    Matter.Body.applyForce(paper1.body,paper1.body.position,{x:135,y:-135});
   
   }
 }
